@@ -29,16 +29,21 @@ def search2(problem, start):
         if child not in reached2:
           frontier2.append((child, path + [child]))
           reached2.append(child)
-
+  #If no solution reached return False
   return solution
 
 
+# Start variable is defined by the problem inital state and transformed for the expand function correct execution
 start = transform_initial(problem["initial-state"])
+
+# search fuinction will return the path of the solution
 result = search2(problem, start)
 
+# The result will return two vaulable outcomes
 final_path1 = result[0]
 final_path2 = result[1]
 
+# Transform the path to the initial format and join them into a path format to submit into the assingment checking system x2
 anwser1 = transform_last(start, final_path1)
 anwser2 = transform_last(start, final_path2)
 
